@@ -9,7 +9,6 @@ import 'package:flutter_web_example/home/widgets/button.dart';
 
 class DesktopScreen extends StatelessWidget {
   const DesktopScreen({Key key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     var screenSize = MediaQuery.of(context).size;

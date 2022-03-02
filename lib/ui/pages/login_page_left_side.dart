@@ -1,16 +1,17 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_web_example/ui/registerpage/register_page.dart';
 import 'package:flutter_web_example/ui/registerpage/register_page_left_side.dart';
 
 class LoginPageLeftSide extends StatelessWidget {
   final TextEditingController _emailController = TextEditingController();
-  final TextEditingController _posswordController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
   bool _isLoading = false;
 
   @override
   void dispose() {
     _emailController.dispose();
-    _posswordController.dispose();
+    _passwordController.dispose();
   }
 
   @override
@@ -34,7 +35,8 @@ class LoginPageLeftSide extends StatelessWidget {
               const SizedBox(
                 height: 24,
               ),
-              const TextField(
+              TextField(
+                controller: _emailController,
                 decoration: InputDecoration(
                   label: (Text(
                     "Email",
@@ -42,7 +44,8 @@ class LoginPageLeftSide extends StatelessWidget {
                   hintText: "PLease write your email address",
                 ),
               ),
-              const TextField(
+              TextField(
+                controller: _passwordController,
                 decoration: const InputDecoration(
                     label: (Text("password")),
                     hintText: "PLease write your email passsword"),
